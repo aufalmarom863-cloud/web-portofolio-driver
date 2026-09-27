@@ -1,4 +1,4 @@
-# figma-make-app
+# aufal-portofolio-driver
 
 React + Vite + Tailwind CSS project running inside Figma Make.
 
