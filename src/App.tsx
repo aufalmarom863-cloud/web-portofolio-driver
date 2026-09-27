@@ -1,4 +1,14 @@
 import { useState } from "react";
+import hiacePremioImg from "./assets/cars/hiace-premio.jpg";
+import hiaceCommuterImg from "./assets/cars/hiace-commuter.jpg";
+import elfLongImg from "./assets/cars/elf-long.jpg";
+import innovaImg from "./assets/cars/innova.jpg";
+import allNewAvanzaImg from "./assets/cars/all-new-avanza.jpg";
+import xpanderImg from "./assets/cars/xpander.jpg";
+import velozImg from "./assets/cars/veloz.jpg";
+import avanzaXeniaImg from "./assets/cars/avanza-xenia.jpg";
+import ertigaImg from "./assets/cars/ertiga.jpg";
+import travelJogjaImg from "./assets/travel/travel-jogja.jpg";
 
 const NAV_LINKS = [
   { label: "Profil", href: "#profil" },
@@ -36,7 +46,7 @@ const CITY_TOUR_CARS: CityTourCar[] = [
     capacity: "11 - 14 Kursi",
     category: "minibus",
     badge: "VIP Executive",
-    image: "/images/cars/hiace-premio.jpg",
+    image: hiacePremioImg,
     features: ["Kabin Super Mewah & Luas", "AC Ducting Tiap Baris", "Reclining Comfort Seats", "Suspensi Paling Lembut"],
   },
   {
@@ -46,7 +56,7 @@ const CITY_TOUR_CARS: CityTourCar[] = [
     capacity: "15 Kursi",
     category: "minibus",
     badge: "Paling Populer",
-    image: "/images/cars/hiace-commuter.jpg",
+    image: hiaceCommuterImg,
     features: ["Kapasitas 15 Penumpang", "AC Dingin Merata", "Bagasi Luas", "Favorit Wisata Rombongan"],
   },
   {
@@ -56,7 +66,7 @@ const CITY_TOUR_CARS: CityTourCar[] = [
     capacity: "17 - 19 Kursi",
     category: "minibus",
     badge: "Kapasitas Ekstra",
-    image: "/images/cars/elf-long.jpg",
+    image: elfLongImg,
     features: ["Muat hingga 19 Penumpang", "Tangguh Rute Pantai & Gunung", "Audio & Karaoke Ready", "Hemat Biaya Rombongan"],
   },
   {
@@ -66,7 +76,7 @@ const CITY_TOUR_CARS: CityTourCar[] = [
     capacity: "7 Kursi",
     category: "mpv",
     badge: "Kenyamanan Terbaik",
-    image: "/images/cars/innova.jpg",
+    image: innovaImg,
     features: ["Kenyamanan Kelas Premium", "Kabin Kedap & Senyap", "Kursi Empuk Ergonomis", "Pilihan Eksekutif & Keluarga"],
   },
   {
@@ -76,7 +86,7 @@ const CITY_TOUR_CARS: CityTourCar[] = [
     capacity: "7 Kursi",
     category: "mpv",
     badge: "Generasi Baru",
-    image: "/images/cars/all-new-avanza.jpg",
+    image: allNewAvanzaImg,
     features: ["Desain Modern & Luas", "AC Double Blower Digital", "Platform FWD Halus", "Sangat Nyaman untuk Kota"],
   },
   {
@@ -86,7 +96,7 @@ const CITY_TOUR_CARS: CityTourCar[] = [
     capacity: "7 Kursi",
     category: "mpv",
     badge: "Suspensi Lembut",
-    image: "/images/cars/xpander.jpg",
+    image: xpanderImg,
     features: ["Bantingan Suspensi Terlembut", "Ground Clearance Tinggi", "Desain Gagah & Stylish", "Kabin Fleksibel"],
   },
   {
@@ -96,7 +106,7 @@ const CITY_TOUR_CARS: CityTourCar[] = [
     capacity: "7 Kursi",
     category: "mpv",
     badge: "Sporty Luxury",
-    image: "/images/cars/veloz.jpg",
+    image: velozImg,
     features: ["Tampilan Mewah & Modern", "Fitur Premium & Ambient Light", "Sofa Mode Fleksibel", "Perjalanan Nyaman"],
   },
   {
@@ -106,7 +116,7 @@ const CITY_TOUR_CARS: CityTourCar[] = [
     capacity: "7 Kursi",
     category: "mpv",
     badge: "Paling Hemat",
-    image: "/images/cars/avanza-xenia.jpg",
+    image: avanzaXeniaImg,
     features: ["Harga Paling Terjangkau", "Tangguh Segala Medan Jogja", "AC Dingin Terawat", "Efisien & Andal"],
   },
   {
@@ -116,7 +126,7 @@ const CITY_TOUR_CARS: CityTourCar[] = [
     capacity: "7 Kursi",
     category: "mpv",
     badge: "Kabin Lega",
-    image: "/images/cars/ertiga.jpg",
+    image: ertigaImg,
     features: ["Interior Wood Panel Elegan", "Bantingan Nyaman & Halus", "Kursi Lapang", "Hemat & Nyaman"],
   },
 ];
@@ -1476,7 +1486,7 @@ Mohon info ketersediaan jadwal pada tanggal yang saya rencanakan. Terima kasih!`
             }}
           >
             <img
-              src="/images/travel/travel-jogja.jpg"
+              src={travelJogjaImg}
               alt="Armada Travel Eksekutif Jogja Antar Kota"
               style={{
                 width: "100%",
