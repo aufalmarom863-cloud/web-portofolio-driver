@@ -1,19 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700;800&display=swap');
 @import 'tailwindcss';
 
 @theme {
-  --color-bg: #0a0a0c;
-  --color-surface: #111114;
-  --color-card: #16161a;
-  --color-amber: #e8a020;
-  --color-amber-dim: #a0700f;
-  --color-steel: #8a8fa0;
-  --color-border: #242430;
-  --font-display: 'Roboto Slab', serif;
-  --font-body: 'Work Sans', sans-serif;
+  --color-bg: #050510;
+  --color-bg-secondary: #07071a;
+  --color-surface: #0c0d18;
+  --color-card: #101222;
+  --color-blue: #2c67ed;
+  --color-blue-light: #38bdf8;
+  --color-amber: #f59e0b;
+  --color-amber-light: #fbbf24;
+  --color-teal: #10b981;
+  --color-steel: #94a3b8;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-glow: rgba(56, 189, 248, 0.25);
+  
+  --font-display: 'Space Grotesk', -apple-system, sans-serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
+}
+
+:root {
+  --col-bg: #050510;
+  --col-bg2: #07071a;
+  --col-blue: #2c67ed;
+  --col-blue-light: #38bdf8;
+  --col-amber: #f59e0b;
+  --col-teal: #10b981;
 }
 
 * {
@@ -22,22 +35,301 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: #050510;
 }
 
 body {
-  background-color: #0a0a0c;
-  color: #e8e8ec;
-  font-family: var(--font-body);
+  background-color: #050510;
+  color: #f1f5f9;
+  font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a0a0c;
+  background: #050510;
 }
 ::-webkit-scrollbar-thumb {
-  background: #e8a020;
-  border-radius: 2px;
+  background: linear-gradient(to bottom, #2c67ed, #38bdf8);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f59e0b;
+}
+
+/* Alfari Keyframes & Animations */
+@keyframes rotateClockwise {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes rotateCounterClockwise {
+  from {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes floatBadge {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes blinkCursor {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes lanyardSway {
+  0%, 100% {
+    transform: perspective(1000px) rotateX(1.5deg) rotateY(-2.5deg) rotateZ(0.6deg);
+  }
+  50% {
+    transform: perspective(1000px) rotateX(-1.5deg) rotateY(2.5deg) rotateZ(-0.6deg);
+  }
+}
+
+.lanyard-swaying {
+  animation: lanyardSway 6s ease-in-out infinite;
+}
+
+/* Alfari Hero Styling */
+.hero-h1-gradient {
+  background: linear-gradient(135deg, #2c67ed 0%, #38bdf8 50%, #818cf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.hero-typewriter-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1.25em;
+  background-color: #38bdf8;
+  margin-left: 4px;
+  vertical-align: middle;
+  animation: blinkCursor 0.9s infinite;
+}
+
+.hero-portrait-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.hero-portrait-glow {
+  position: absolute;
+  inset: -15%;
+  background: radial-gradient(circle at 50% 45%, rgba(56, 189, 248, 0.22) 0%, rgba(44, 103, 237, 0.18) 35%, rgba(245, 158, 11, 0.12) 65%, transparent 75%);
+  filter: blur(48px);
+  pointer-events: none;
+  animation: pulseGlow 6s ease-in-out infinite;
+  z-index: 0;
+}
+
+.hero-portrait-orbit-one {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 112%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px dashed rgba(56, 189, 248, 0.22);
+  pointer-events: none;
+  z-index: 1;
+  animation: rotateClockwise 35s linear infinite;
+}
+
+.hero-portrait-orbit-two {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 92%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid rgba(245, 158, 11, 0.16);
+  pointer-events: none;
+  z-index: 1;
+  animation: rotateCounterClockwise 28s linear infinite;
+}
+
+.hero-portrait-card {
+  position: relative;
+  z-index: 2;
+  border-radius: 28px;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(20, 24, 45, 0.8) 0%, rgba(10, 12, 22, 0.95) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 0 30px rgba(56, 189, 248, 0.15);
+  backdrop-filter: blur(16px);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.hero-portrait-card:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.8), 0 0 45px rgba(56, 189, 248, 0.28);
+}
+
+.hero-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #2c67ed 0%, #0284c7 100%);
+  color: #ffffff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  box-shadow: 0 10px 25px -5px rgba(44, 103, 237, 0.45);
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-btn-primary:hover {
+  background: linear-gradient(135deg, #3b82f6 0%, #0ea5e9 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px -5px rgba(44, 103, 237, 0.65);
+}
+
+.hero-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 26px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  backdrop-filter: blur(12px);
+  transition: all 0.25s ease;
+}
+
+.hero-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(56, 189, 248, 0.4);
+  color: #38bdf8;
+  transform: translateY(-2px);
+}
+
+/* Social Icon Buttons */
+.hero-social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  color: #94a3b8;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.hero-social-btn:hover {
+  background: rgba(56, 189, 248, 0.12);
+  border-color: rgba(56, 189, 248, 0.4);
+  color: #38bdf8;
+  transform: translateY(-2px);
+}
+
+/* Glass Surface Utility */
+.glass-panel {
+  background: rgba(14, 17, 32, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: linear-gradient(180deg, rgba(16, 20, 38, 0.75) 0%, rgba(9, 11, 22, 0.85) 100%);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(56, 189, 248, 0.35);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.6), 0 0 20px rgba(56, 189, 248, 0.15);
+  transform: translateY(-3px);
+}
+
+/* Lanyard 3D Container & Viewport (Exact from alfari.my.id) */
+.lanyard-card-container {
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.lanyard-viewport {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.lanyard {
+  touch-action: none;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.lanyard-canvas {
+  cursor: grab;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.lanyard-canvas:active {
+  cursor: grabbing;
 }
