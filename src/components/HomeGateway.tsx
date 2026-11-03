@@ -143,7 +143,7 @@ export default function HomeGateway({
 
       {/* Footer */}
       <footer className="relative z-10 py-6 border-t border-white/[0.06] text-center text-xs font-mono text-slate-500">
-        © 2026 Muhammad Aufal Maromi · Portofolio Developer & Driver Profesional
+        © 2026 Aufal Marom · Portofolio Developer & Driver Profesional
       </footer>
     </div>
   )

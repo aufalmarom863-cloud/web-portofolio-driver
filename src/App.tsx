@@ -419,7 +419,7 @@ Mohon info ketersediaan jadwal pada tanggal yang saya rencanakan. Terima kasih!`
             </div>
             <div className="flex flex-col">
               <span className="font-['Space_Grotesk'] font-bold text-sm sm:text-base lg:text-lg text-white tracking-tight group-hover:text-sky-300 transition-colors leading-tight">
-                M. Aufal Maromi
+                Aufal Marom
               </span>
               <span className="font-mono text-[9px] text-slate-400 group-hover:text-amber-300 transition-colors tracking-wider uppercase font-semibold">
                 {view === "developer"

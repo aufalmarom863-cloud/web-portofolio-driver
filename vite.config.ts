@@ -92,7 +92,7 @@ function figmaSiteConfiguration(config: FigmaSiteConfiguration): Plugin {
     return html.replace(`<!-- ${slotName} -->`, content)
   }
 
-  const title = config.title ?? "Aufal Portofolio Driver"
+  const title = config.title ?? "Aufal Marom"
   const description = config.description ?? ""
   const favicon = config.icons?.icon ?? ""
   const socialImage = config.openGraph?.image ?? ""
